@@ -1,0 +1,19 @@
+<!-- LibrosBibliotecaApp/templates/libro_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <title>Lista de Libros</title>
+</head>
+<body>
+    <h1>Lista de Libros</h1>
+    <ul>
+        {% for libro in libros %}
+            <li><a href="{% url 'detalle_libro' pk=libro.pk %}">{{ libro.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'libro_nuevo' %}">Agregar nuevo libro</a>
+</body>
+</html>

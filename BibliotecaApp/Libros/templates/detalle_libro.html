@@ -1,0 +1,20 @@
+<!-- LibrosBibliotecaApp/templates/libro_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <title>Detalle del Libro</title>
+</head>
+<body>
+    <h1>Detalle del Libro</h1>
+    <p><strong>Título:</strong> {{ libro.titulo }}</p>
+    <p><strong>Autor:</strong> {{ libro.autor }}</p>
+    <p><strong>Género:</strong> {{ libro.genero }}</p>
+    <p><strong>Año de Publicación:</strong> {{ libro.ano_publicacion }}</p>
+    <a href="{% url 'editar_libro' pk=libro.pk %}">Editar libro</a>
+    <a href="{% url 'eliminar_libro' pk=libro.pk %}">Eliminar libro</a>
+    <a href="{% url 'libro_list' %}">Volver a la lista de libros</a>
+</body>
+</html>
